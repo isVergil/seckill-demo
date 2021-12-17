@@ -1,14 +1,14 @@
-###1、基本配置
-#####Mysql 过期
+### 1、基本配置
+##### Mysql 过期
 ```
 https://blog.csdn.net/lidachao01/article/details/72385498
 ```
-#####选择 springboot 自带默认最快连接池 hikari 
-#####数据库字符集
+##### 选择 springboot 自带默认最快连接池 hikari 
+##### 数据库字符集
 ```
 utf8mb4 -- UTF-8 Unicode (可以存 emojo 表情)
 ```
-#####数据库表结构
+##### 数据库表结构
 ```
 CREATE TABLE t_user(
 	`id` BIGINT(20) NOT NULL COMMENT '用户id 手机号码',
