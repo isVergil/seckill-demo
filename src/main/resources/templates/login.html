@@ -83,7 +83,8 @@
                 console.log(data);
                 layer.closeAll();
                 if (data.code == 200) {
-                    layer.msg("成功");
+                    layer.msg("成功")
+                    //跳转商品列表
                     window.location.href = "/goods/toList";
                 } else {
                     layer.msg(data.message);
