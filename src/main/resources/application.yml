@@ -1,37 +1,55 @@
 spring:
-  #¹Ø±Õ thymeleaf »º´æ
+  #å…³é—­ thymeleaf ç¼“å­˜
   thymeleaf:
     cache: false
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/seckill?useUnicode=true&characterEncoding=UTF-8&ServerTimeZone=Asia/Shanghai
     username: root
     password: bill
     hikari:
-      #Á¬½Ó³ØÃû
+      #è¿æ¥æ± å
       pool-name: DataHikariCP
-      #×îĞ¡¿ÕÏĞÁ¬½ÓÊı
+      #æœ€å°ç©ºé—²è¿æ¥æ•°
       minimum-idle: 5
-      #¿ÕÏĞÁ¬½Ó´æ»î×î´óÊ±¼ä Ä¬ÈÏ 10·ÖÖÓ£¨600000£©
+      #ç©ºé—²è¿æ¥å­˜æ´»æœ€å¤§æ—¶é—´ é»˜è®¤ 10åˆ†é’Ÿï¼ˆ600000ï¼‰
       idle-timeout: 1800000
-      #×î´óÁ¬½ÓÊı Ä¬ÈÏ 10
+      #æœ€å¤§è¿æ¥æ•° é»˜è®¤ 10
       maximum-pool-size: 10
-      #´ÓÁ¬½Ó³Ø·µ»ØµÄÁ¬½Ó×Ô¶¯Ìá½»
+      #ä»è¿æ¥æ± è¿”å›çš„è¿æ¥è‡ªåŠ¨æäº¤
       auto-commit: true
-      #Á¬½Ó×î´ó´æ»îÊ±¼ä 0 ±íÊ¾ÓÀ¾Ã´æ»î£¬Ä¬ÈÏ30·ÖÖÓ £¨1800000£©
+      #è¿æ¥æœ€å¤§å­˜æ´»æ—¶é—´ 0 è¡¨ç¤ºæ°¸ä¹…å­˜æ´»ï¼Œé»˜è®¤30åˆ†é’Ÿ ï¼ˆ1800000ï¼‰
       max-lifetime: 1800000
-      #Á¬½Ó³¬Ê±Ê±¼ä Ä¬ÈÏ 30 s
+      #è¿æ¥è¶…æ—¶æ—¶é—´ é»˜è®¤ 30 s
       connection-timeout: 30000
-      #²âÊÔÁ¬½ÓÊÇ·ñ¿ÉÓÃµÄ²éÑ¯Óï¾ä
+      #æµ‹è¯•è¿æ¥æ˜¯å¦å¯ç”¨çš„æŸ¥è¯¢è¯­å¥
       connection-test-query: SELECT 1
 
+  redis:
+    host: 47.95.143.162
+    port: 6379
+    password: bill
+    #è¶…æ—¶æ—¶é—´
+    timeout: 10000ms
+    #è¿æ¥æ± 
+    lettuce:
+      pool:
+        max-active: 8
+        #æœ€å¤§è¿æ¥é˜»å¡ç­‰å¾…æ—¶é—´ é»˜è®¤ -1
+        max-wait: 10000ms
+        #æœ€å¤§ç©ºé—²è¿æ¥
+        max-idle: 200
+        min-idle: 5
+
+
 mybatis-plus:
-  #ÅäÖÃ Mapper.xml Ó³ÉäÎÄ¼ş
+  #é…ç½® Mapper.xml æ˜ å°„æ–‡ä»¶
   mapper-locations: classpath*:/mapper/*Mapper.xml
-  #ÅäÖÃ  MyBatis Êı¾İ·µ»ØÀàĞÍ±ğÃû £¨Ä¬ÈÏ±ğÃûÊÇÀàÃû£©
+  #é…ç½®  MyBatis æ•°æ®è¿”å›ç±»å‹åˆ«å ï¼ˆé»˜è®¤åˆ«åæ˜¯ç±»åï¼‰
   type-aliases-package: com.bill.seckill.pojo
 
-#MyBatis SQL ´òÓ¡ÈÕÖ¾(·½·¨½Ó¿ÚËùÔÚµÄ°ü£¬²»ÊÇ Mapper.xml ËùÔÚµÄ°ü)
+#MyBatis SQL æ‰“å°æ—¥å¿—(æ–¹æ³•æ¥å£æ‰€åœ¨çš„åŒ…ï¼Œä¸æ˜¯ Mapper.xml æ‰€åœ¨çš„åŒ…)
 logging:
   level:
     com.bill.seckill.mapper: debug
