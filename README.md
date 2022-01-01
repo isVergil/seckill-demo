@@ -1,4 +1,4 @@
-## 1、基本配置
+### 1、基本配置
 * Mysql 过期
 ```
 https://blog.csdn.net/lidachao01/article/details/72385498
@@ -39,6 +39,14 @@ utf8mb4 -- UTF-8 Unicode (可以存 emojo 表情)
 
 <br> 
 
+* 配置类 `WebConfig.java` 大于配置文件 `application.yml`
+<br>
+
+* `mybatis plus` 强大的条件构造器 `queryWrapper` 和 `updateWrapper` 的使用
+<br> 
+<br> 
+
+### 2、数据库表结构
 * 用户表结构
 ```
 CREATE TABLE t_user(
@@ -53,7 +61,6 @@ CREATE TABLE t_user(
 	PRIMARY KEY(`id`)
 );
 ```
-<br> 
 
 * 商品表结构
 ```
@@ -68,7 +75,6 @@ CREATE TABLE `t_goods` (
 	PRIMARY KEY(`id`)
 )ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 ```
-<br> 
 
 * 订单表结构
 ```
@@ -87,7 +93,6 @@ CREATE TABLE `t_order` (
 	PRIMARY KEY(`id`)
 )ENGINE=INNODB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 ```
-<br> 
 
 * 秒杀商品表结构
 ```
@@ -101,7 +106,6 @@ CREATE TABLE `t_seckill_goods` (
 	PRIMARY KEY(`id`)
 )ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 ```
-<br> 
 
 * 秒杀订单表结构
 ```
@@ -113,8 +117,9 @@ CREATE TABLE `t_seckill_order` (
 	PRIMARY KEY(`id`)
 )ENGINE=INNODB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 ```
-<br> 
+<br>
 
+### 3、JMeter 压力测试工具
 
 
 
